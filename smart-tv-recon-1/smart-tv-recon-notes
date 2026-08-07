@@ -5,16 +5,16 @@ I wanted to understand what services my smart TV exposes on my home network, and
 
 Steps taken
 
-1. nmap -sV 192.168.1.109
+1. nmap -sV 192.168.****
 discovered all devices on myy local network through my tv's IP address
 
-2. nmap -sS -A 192.168.1.42
+2. nmap -sS -A 192.168.****
 deeper scan of the TV specifically
 
-3. Browsed to http://192.168.1.42:9080/ 
+3. Browsed to http://192.168.****:9080/ 
 in a browser to inspect the open HTTP service directly
 
-4. added /ping at the end of http://192.168.1.42:9080/ 
+4. added /ping at the end of http://192.168.****:9080/ 
 performed an API health check on what seems to be a Netflix local API
 
 What i found:
