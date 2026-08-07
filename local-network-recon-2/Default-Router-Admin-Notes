@@ -1,0 +1,33 @@
+Date: August 7, 2026 
+Tools used: Router admin web interface, browser 
+Environment: My own home network (authorized)
+
+Objective
+
+While investigating my home network's overall security posture (following up on earlier Nmap recon of connected devices), I checked whether my router's admin panel was still using its factory-default credentials.
+
+Steps taken
+Identified the router's local admin IP (commonly 192.168.1.1 — confirmed via ipconfig/ip route gateway address).
+Navigated to the admin login page in a browser.
+Attempted login using the manufacturer's published default username/password (publicly available in the router's documentation/manual).
+Confirmed access was granted — the router was still running factory-default credentials.
+Changed the admin password to a long, unique, non-default value.
+Checked and confirmed remote/WAN management was disabled, limiting admin access to the local network only.
+
+What I found
+The router's administrative interface was still protected only by its factory-default username and password. These credentials are publicly documented by the manufacturer and are not a meaningful security control on their own — anyone with local network access (or remote access, if WAN management were enabled) could have logged in with no effort.
+
+Why it matters
+Default credentials are one of the most commonly exploited weaknesses in consumer networking equipment, precisely because they aren't secret — they're published and searchable. A router is a uniquely high-value target compared to other devices on a network because it sits at the center of all traffic and controls network-wide settings. Specific risks this exposed me to included: Full administrative takeover of the router, DNS hijacking, Firewall/port manipulation, Botnet recruitment, Network-wide lateral movement.
+
+Remediation applied
+Changed the router admin password to a strong, unique credential not used anywhere else.
+Verified remote/WAN administrative access was disabled, restricting admin login to the local network only.
+
+Next steps
+Periodically audit router settings as part of routine home network hygiene, not a one-time fix.
+Apply the same default-credential check to any other network-connected devices (smart TV, printer, IoT devices) discovered during earlier Nmap scans.
+Consider enabling the router's guest/IoT network feature to segment less-trusted devices from primary devices going forward.
+
+Related exam/job-relevant concepts
+Domain 2 (Threats, Vulnerabilities & Mitigations — default configurations, common vulnerability classes), Domain 3 (Security Architecture — the router as central network infrastructure), Domain 5 (Security Program Management — routine security auditing)
