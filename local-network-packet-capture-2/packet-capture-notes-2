@@ -1,0 +1,38 @@
+Identifying Third-Party Tracking Domains via TLS SNI Analysis on a University Website
+
+Date: August 8, 2026
+Tools used: Wireshark
+Environment: My own laptop, own home network (authorized)
+
+Objective
+While practicing packet capture fundamentals, I wanted to determine whether I could distinguish separate encrypted (TLS) conversations within a single capture — specifically, isolating traffic to Google's services versus traffic to my university's website (LMU) — without decrypting anything, using only metadata visible in the TLS handshake.
+
+Steps taken
+1. Started a Wireshark capture, then visited `google.com` followed by `www.lmu.edu` in the same browsing session.
+2. Stopped the capture and applied the filter `tls.handshake.extensions_server_name` to isolate TLS Client Hello packets and reveal each connection's destination hostname via the SNI (Server Name Indication) field — visible even though the rest of the handshake is encrypted.
+3. Reviewed all resulting hostnames to map out every distinct server my browser connected to during the two page loads.
+4. Cross-referenced unfamiliar hostnames to identify their purpose.
+
+What I found
+Filtering by SNI successfully separated the capture into distinct site conversations without needing to decrypt anything. `www.lmu.edu` appeared clearly, alongside expected Google-related domains (`beacons.gcp.gvt2.com`, `content-autofill.googleapis.com`, `www.googletagmanager.com`).
+
+More notably, loading a single page on LMU's website triggered connections to at least five separate third-party advertising/tracking domains that were not part of lmu.edu itself:
+- `cdn-cookieyes.com` 
+- `pixel.sitescout.com` and `pixel-sync.sitescout.com`
+- `sync.crwdcntrl.net`
+- `loadm.exelator.com` 
+- `cdn01.basis.net` 
+
+None of these were visible as the URL in the browser's address bar — they were only discoverable by inspecting the actual network traffic.
+
+Why it matters 
+This demonstrates that SNI remains visible in plaintext even within an otherwise encrypted TLS session, since the server needs to know which hostname's certificate to present before encryption is fully established. This is a practical example of metadata leakage: while TLS protects the *content* of communication, it does not hide *which sites you're connecting to by default — a network observer (ISP, on-path attacker, or anyone monitoring the network) can still map out browsing destinations from SNI alone.
+
+Separately, the discovery of multiple third-party tracking domains loaded automatically by a single university webpage is a prime example of expanded attack surface and third-party risk: visiting one trusted site silently establishes connections to several additional external parties, each representing its own data collection practice and potential point of compromise.
+
+Next steps
+- Consider using a DNS-based ad/tracker blocker or browser extension to reduce automatic connections to third-party tracking domains.
+- Repeat this SNI-filtering technique on a few other frequently visited sites to build a broader picture of typical third-party exposure during normal browsing.
+
+Related exam/job-relevant concepts
+Domain 2 (Threats, Vulnerabilities & Mitigations), Domain 3 (Security Architecture), Domain 5 (Security Program Management and third-party risk assessment). 
