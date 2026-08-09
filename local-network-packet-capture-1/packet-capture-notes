@@ -1,0 +1,28 @@
+Date: 08/08/26 
+Tools used: Wireshark 
+Environment: My own laptop, own home network (authorized)
+
+Objective
+To directly observe the difference between unencrypted (HTTP) and encrypted (HTTPS/TLS) web traffic at the packet level, and demonstrate why transmitting data in plaintext presents a confidentiality risk.
+
+Steps taken
+Started a Wireshark capture on my active network interface.
+Navigated to http://httpforever.com/ (a site intentionally kept on plain HTTP, useful for guaranteed plaintext testing) in my browser.
+Stopped the capture and applied the display filter http to isolate application-layer HTTP traffic from the surrounding TCP handshake/ACK packets.
+Selected an HTTP GET request packet and reviewed the Packet Details pane to inspect the request line, headers, and host information.
+Right-clicked the packet and used Follow -> HTTP Stream to reassemble the full plaintext request and response.
+Repeated the capture process on an HTTPS site (e.g., https://google.com and https://LMU.Edu), filtered to tls, and attempted the same Follow Stream approach for comparison.
+
+What I found
+On the HTTP capture, the GET request and full server response — including [headers / HTML content / any form data, be specific] — were fully readable in plain text via Follow HTTP Stream, with no obfuscation at all.
+On the HTTPS capture, the equivalent traffic showed as TLS-encrypted application data. The Packet Bytes pane displayed unreadable binary/ciphertext, and Follow TLS Stream produced no readable content — confirming the payload was encrypted in transit.
+
+Why it matters 
+This exercise makes concrete something that's often taught only in the abstract: HTTP traffic is visible in full to anyone positioned to observe network traffic — a shared Wi-Fi network, a compromised router, or an on-path attacker. Any data sent over HTTP, including form submissions, is exposed exactly as typed, with no protection.
+HTTPS (HTTP over TLS) solves this by encrypting the payload before transmission, so even if traffic is intercepted, the content itself is unreadable without the decryption key. This directly demonstrates the confidentiality leg of the CIA triad, and explains in practical terms why browsers now flag plain HTTP sites as "Not Secure."
+
+What I'd recommend / next steps
+Avoid entering any real credentials or sensitive data on HTTP-only sites, given this exposure is trivial to observe with freely available tools.
+
+Related exam/job-relevant concepts
+Domain 1 (Confidentiality, one of the CIA triad's core pillars), Domain 3 (Security Architecture — encryption in transit), Domain 2 (risks of legacy/insecure protocols). 
