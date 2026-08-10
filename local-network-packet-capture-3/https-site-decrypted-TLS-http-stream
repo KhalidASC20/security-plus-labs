@@ -1,0 +1,36 @@
+:method: GET
+:authority: cdn-cookieyes.com
+:scheme: https
+:path: /client_data/86c0eaf29233abe84d3d46796108d8b5/script.js
+sec-ch-ua-platform: "Windows"
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36
+sec-ch-ua: "Not=A?Brand";v="99", "Google Chrome";v="151", "Chromium";v="151"
+sec-ch-ua-mobile: ?0
+accept: */*
+sec-fetch-site: cross-site
+sec-fetch-mode: no-cors
+sec-fetch-dest: script
+sec-fetch-storage-access: active
+referer: https://www.lmu.edu/
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+if-none-match: "c8ee434b118e97879a3b12caa69e4b27"
+if-modified-since: Wed, 29 Jul 2026 16:51:53 GMT
+
+
+:status: 304
+date: Mon, 10 Aug 2026 02:43:56 GMT
+age: 381119
+server: cloudflare
+vary: Accept-Encoding
+x-amz-id-2: nYFGHJok9+gs7rpsET5Ri/1RY6z9IDm1+hHeCayWJxoSWCm+KUk3GvVAzCSQgipOkm/lgD4RusJOFYkkLpYLHa2uos1QHaXh
+x-amz-request-id: DB9KPMM6CHX7NMGY
+x-amz-replication-status: PENDING
+last-modified: Wed, 29 Jul 2026 16:51:53 GMT
+etag: "c8ee434b118e97879a3b12caa69e4b27"
+access-control-allow-origin: *
+access-control-allow-methods: GET, OPTIONS
+cache-control: max-age=0, must-revalidate, s-maxage=604800, proxy-revalidate
+cf-cache-status: HIT
+cf-ray: a28ba7e69e8e9d92-LAX
+
