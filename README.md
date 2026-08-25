@@ -20,19 +20,19 @@ A collection of hands-on network and security exercises completed while studying
 **Date:** Aug 7, 2026
 Discovered my home router was still running factory-default admin credentials. Documents the specific threat vectors this exposed (router takeover, DNS hijacking, botnet recruitment) and the remediation steps applied.
 
-### 2. [Observing Plaintext HTTP vs. Encrypted HTTPS Traffic](.local-network-packet-capture-1/packet-capture-notes)
+### 2. [Observing Plaintext HTTP vs. Encrypted HTTPS Traffic](local-network-packet-capture-1/packet-capture-notes)
 **Date:** Aug 2026
 Used Wireshark to directly compare unencrypted HTTP traffic against TLS-encrypted HTTPS traffic on the same type of request, demonstrating why encryption in transit matters using real captured evidence rather than just theory.
 
-### 3. [Identifying Third-Party Tracking Domains via TLS SNI Analysis](.local-network-packet-capture-2/packet-capture-notes-2)
+### 3. [Identifying Third-Party Tracking Domains via TLS SNI Analysis](local-network-packet-capture-2/packet-capture-notes-2)
 **Date:** Aug 8, 2026
 Used the TLS Client Hello's SNI field to identify distinct encrypted conversations without decryption, uncovering multiple third-party ad-tech/tracking domains silently contacted by a single university webpage load.
 
-### 4. [Decrypting Own TLS Traffic with SSLKEYLOGFILE and HTTP/2 Analysis](.local-network-packet-capture-3/decrypting-TLS-traffic-notes)
+### 4. [Decrypting Own TLS Traffic with SSLKEYLOGFILE and HTTP/2 Analysis](local-network-packet-capture-3/decrypting-TLS-traffic-notes)
 **Date:** Aug 9, 2026
 Decrypted my own browser's TLS sessions using the SSLKEYLOGFILE technique, then compared raw decrypted TLS stream output against parsed HTTP/2 stream output to demonstrate the difference between decryption and protocol-level readability.
 
-### 5. [Capturing Unprotected HTTP Login Credentials](.local-network-packet-capture-4/http-password-capture-notes)
+### 5. [Capturing Unprotected HTTP Login Credentials](local-network-packet-capture-4/http-password-capture-notes)
 **Date:** Aug 11, 2026
 Located a live, publicly accessible login page still using plain HTTP, and captured the full plaintext credential submission via packet analysis using fake/dummy credentials — a real-world demonstration of credential exposure risk over unencrypted channels.
 
