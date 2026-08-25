@@ -40,7 +40,7 @@ Located a live, publicly accessible login page still using plain HTTP, and captu
 
 ## Additional recon (informal findings, write-ups in progress)
 A few early exploratory scans that i did, but reflect the same skill set:
-### 0. (.smart-tv-recon-1/smart-tv-recon-notes).
+### 0. [Pinging Smart TV and discovering an unauthenticated local API](smart-tv-recon-1/smart-tv-recon-notes).
 **Date:** Aug 7, 2026
 - Identified an exposed, unauthenticated local API (embedded Mongoose httpd server) on a smart TV via Nmap, and fingerprinted it as a Netflix companion-app endpoint through passive banner-grabbing.
 OTHERS:
