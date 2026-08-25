@@ -16,7 +16,7 @@ A collection of hands-on network and security exercises completed while studying
 ---
 
 ## Lab Index
-### 1. [Router Default Credential Discovery and Remediation](.local-network-recon-2/Default-Router-Admin-Notes)
+### 1. [Router Default Credential Discovery and Remediation](local-network-recon-2/Default-Router-Admin-Notes)
 **Date:** Aug 7, 2026
 Discovered my home router was still running factory-default admin credentials. Documents the specific threat vectors this exposed (router takeover, DNS hijacking, botnet recruitment) and the remediation steps applied.
 
