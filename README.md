@@ -36,6 +36,10 @@ Decrypted my own browser's TLS sessions using the SSLKEYLOGFILE technique, then 
 **Date:** Aug 11, 2026
 Located a live, publicly accessible login page still using plain HTTP, and captured the full plaintext credential submission via packet analysis using fake/dummy credentials — a real-world demonstration of credential exposure risk over unencrypted channels.
 
+### 6. [Remote Desktop Management](remote-desktop-management-1/remote-desktop-management-notes.md)
+**Date:** Aug 29, 2026
+Remotely accessed my desktop via Anydesk from my laptop to simulate an IT ticket. Disabled a printing function remotely to create a fault and then went through trouble shooting steps to restart the printing adapter remotely.
+
 ---
 
 ## Additional recon (informal findings, write-ups in progress)
