@@ -25,10 +25,14 @@ The actual explanation: `services.msc` runs inside the Microsoft Management Cons
 
 Screenshot(s)
 
-![Anydesk open session pops up on client device](remote-desktop-management-1/anydesk-open-session.png)
-![Notes window showing Printer disabled when trying to print](remote-desktop-management-1/printer-disabled-during-attempt.png)
-![Command Prompt output of `whoami` and `whoami /groups`](remote-desktop-management-1/whoami-command-line.png)
-![Services window showing Print Spooler status as running](remote-desktop-management-1/print-spool-running.png)
+Anydesk open session pops up on client device
+![Anydesk open session pops up on client device](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-desktop-management-1/anydesk-open-session.png?raw=true)
+Notes window showing Printer disabled when trying to print
+![Notes window showing Printer disabled when trying to print](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-desktop-management-1/printer-disabled-during-attempt.png?raw=true)
+Command Prompt output of whoami and whoami /groups
+![Command Prompt output of `whoami` and `whoami /groups`](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-desktop-management-1/whoami-command-lines.png?raw=true)
+Services window showing Print Spooler status as running
+![Services window showing Print Spooler status as running](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-desktop-management-1/print-spool-running.png?raw=true)
 
 Why it matters 
 This investigation demonstrated that UAC enforcement is not uniform across all administrative actions — a common misconception is that any admin-level change always triggers a consent prompt. In reality, Windows maintains a defined trust boundary around specific signed, first-party tools that bypass the prompt for accounts already holding administrative rights. Understanding this distinction matters for both offensive and defensive security reasoning: it explains legitimate, expected behavior (as demonstrated here), but the same auto-elevation mechanism has also historically been a target for privilege escalation research, since it defines a known, exploitable trust boundary if a system's integrity is otherwise compromised.
