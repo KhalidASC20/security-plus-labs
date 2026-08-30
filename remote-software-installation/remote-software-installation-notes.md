@@ -23,9 +23,13 @@ Unlike the Print Spooler service restart (which required no UAC prompt due to a 
 More significantly, the UAC prompt ran in Windows' **Secure Desktop** mode — an isolated rendering context specifically designed to prevent other software, including remote-control applications, from programmatically interacting with or automatically dismissing elevation prompts. AnyDesk's free version was unable to click through this prompt remotely and instead required the action to be completed directly at the physical machine, after which the session reconnected on its own.
 
 ### Screenshot(s)
-[AnyDesk session showing "awaiting authentication" message]
-[UAC consent prompt for the 7-Zip installer]
-[7-Zip successfully installed, confirmed post-reconnection]
+
+AnyDesk session showing "awaiting authentication" message
+![AnyDesk session showing "awaiting authentication" message](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-software-installation/anydesk-authorization-for-remote-access.png?raw=true)
+UAC consent prompt for the 7-Zip installer
+![UAC consent prompt for the 7-Zip installer](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-software-installation/anydesk-UAC-pompt.jpeg?raw=true)
+7-Zip successfully installed, confirmed post-reconnection
+![7-Zip successfully installed, confirmed post-reconnection](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-software-installation/7-zip-running.png?raw=true) 
 
 ### Why it matters
 This is a direct, hands-on demonstration of a real Windows security control working as intended: Secure Desktop mode exists specifically to prevent malware or unauthorized remote software from silently self-elevating privileges by scripting past a UAC prompt. By experiencing this restriction firsthand — being blocked from remotely accepting the prompt through standard AnyDesk functionality — this exercise validated that the isolation boundary functions even against a legitimate, authorized remote-support tool being used for an authorized purpose.
