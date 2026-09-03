@@ -3,9 +3,11 @@ Tools used: Wireshark
 Environment: My own laptop, own home network (authorized)
 
 Objective
+
 To directly observe the difference between unencrypted (HTTP) and encrypted (HTTPS/TLS) web traffic at the packet level, and demonstrate why transmitting data in plaintext presents a confidentiality risk.
 
 Steps taken
+
 Started a Wireshark capture on my active network interface.
 Navigated to http://httpforever.com/ (a site intentionally kept on plain HTTP, useful for guaranteed plaintext testing) in my browser.
 Stopped the capture and applied the display filter http to isolate application-layer HTTP traffic from the surrounding TCP handshake/ACK packets.
@@ -14,19 +16,32 @@ Right-clicked the packet and used Follow -> HTTP Stream to reassemble the full p
 Repeated the capture process on an HTTPS site (e.g., https://google.com and https://LMU.Edu), filtered to tls, and attempted the same Follow Stream approach for comparison.
 
 What I found
+
 On the HTTP capture, the GET request and full server response — including [headers / HTML content / any form data, be specific] — were fully readable in plain text via Follow HTTP Stream, with no obfuscation at all.
 On the HTTPS capture, the equivalent traffic showed as TLS-encrypted application data. The Packet Bytes pane displayed unreadable binary/ciphertext, and Follow TLS Stream produced no readable content — confirming the payload was encrypted in transit.
 
 Snapshot(s)
-Packet capture filtered by server name using command tls.handshake.extensions_server_names.
-[packet-filtered-by-server-name](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/packet-filtered-by-server-name.png?raw=true)
+
+Packet capture of wbsite traffic filtered to specifically HTML traffic
+![packet-html-filter](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/packet-html-filter.png?raw=true)
+Captured the get request package revealing unencrypted data
+![plaintext-GET](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/plaintext-GET.png?raw=true)
+Captured the complete HTML stream showing the unencrypted data: see http-site-packet-capture-html-stream-1
+Packet capture filtered by server name using command: 'tls.handshake.extensions_server_names'.
+![packet-filtered-by-server-name](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/packet-filtered-by-server-name.png?raw=true)
+Captured traffic from https website and the packet data was encrypted
+![encrypted-packet-HTTPS](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/encrypted-packet-HTTPS.png?raw=true)
+
 
 Why it matters 
+
 This exercise makes concrete something that's often taught only in the abstract: HTTP traffic is visible in full to anyone positioned to observe network traffic — a shared Wi-Fi network, a compromised router, or an on-path attacker. Any data sent over HTTP, including form submissions, is exposed exactly as typed, with no protection.
 HTTPS (HTTP over TLS) solves this by encrypting the payload before transmission, so even if traffic is intercepted, the content itself is unreadable without the decryption key. This directly demonstrates the confidentiality leg of the CIA triad, and explains in practical terms why browsers now flag plain HTTP sites as "Not Secure."
 
-What I'd recommend / next steps
+Next steps
+
 Avoid entering any real credentials or sensitive data on HTTP-only sites, given this exposure is trivial to observe with freely available tools.
 
 Related exam/job-relevant concepts
+
 Domain 1 (Confidentiality, one of the CIA triad's core pillars), Domain 3 (Security Architecture — encryption in transit), Domain 2 (risks of legacy/insecure protocols). 
