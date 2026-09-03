@@ -20,7 +20,7 @@ A collection of hands-on network and security exercises completed while studying
 **Date:** Aug 7, 2026
 Discovered my home router was still running factory-default admin credentials. Documents the specific threat vectors this exposed (router takeover, DNS hijacking, botnet recruitment) and the remediation steps applied.
 
-### 2. [Observing Plaintext HTTP vs. Encrypted HTTPS Traffic](local-network-packet-capture-1/packet-capture-notes)
+### 2. [Observing Plaintext HTTP vs. Encrypted HTTPS Traffic](local-network-packet-capture-1/packet-capture-notes.md)
 **Date:** Aug 2026
 Used Wireshark to directly compare unencrypted HTTP traffic against TLS-encrypted HTTPS traffic on the same type of request, demonstrating why encryption in transit matters using real captured evidence rather than just theory.
 
