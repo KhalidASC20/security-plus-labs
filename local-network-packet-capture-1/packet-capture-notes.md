@@ -17,6 +17,10 @@ What I found
 On the HTTP capture, the GET request and full server response — including [headers / HTML content / any form data, be specific] — were fully readable in plain text via Follow HTTP Stream, with no obfuscation at all.
 On the HTTPS capture, the equivalent traffic showed as TLS-encrypted application data. The Packet Bytes pane displayed unreadable binary/ciphertext, and Follow TLS Stream produced no readable content — confirming the payload was encrypted in transit.
 
+Snapshot(s)
+Packet capture filtered by server name using command tls.handshake.extensions_server_names.
+[packet-filtered-by-server-name](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/packet-filtered-by-server-name.png?raw=true)
+
 Why it matters 
 This exercise makes concrete something that's often taught only in the abstract: HTTP traffic is visible in full to anyone positioned to observe network traffic — a shared Wi-Fi network, a compromised router, or an on-path attacker. Any data sent over HTTP, including form submissions, is exposed exactly as typed, with no protection.
 HTTPS (HTTP over TLS) solves this by encrypting the payload before transmission, so even if traffic is intercepted, the content itself is unreadable without the decryption key. This directly demonstrates the confidentiality leg of the CIA triad, and explains in practical terms why browsers now flag plain HTTP sites as "Not Secure."
