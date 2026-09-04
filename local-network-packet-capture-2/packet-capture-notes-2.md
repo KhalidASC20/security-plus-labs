@@ -9,9 +9,16 @@ While practicing packet capture fundamentals, I wanted to determine whether I co
 
 Steps taken
 1. Started a Wireshark capture, then visited `google.com` followed by `www.lmu.edu` in the same browsing session.
-2. Stopped the capture and applied the filter `tls.handshake.extensions_server_name` to isolate TLS Client Hello packets and reveal each connection's destination hostname via the SNI (Server Name Indication) field — visible even though the rest of the handshake is encrypted.
+2. Stopped the capture and applied the filter `tls.handshake.extensions_server_name` to isolate TLS Client Hello packets and reveal each connection's 
+destination hostname via the SNI (Server Name Indication) field — visible even though the rest of the handshake is encrypted.
+
+![packet0filtered-by-server-name](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-2/packet-filtered-by-server-name.png?raw=true)
+
 3. Reviewed all resulting hostnames to map out every distinct server my browser connected to during the two page loads.
 4. Cross-referenced unfamiliar hostnames to identify their purpose.
+5. Discovered third party sites
+
+![packet-capture-of-third-party](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-2/packet-capture-of-third-party-ad-trackers.png?raw=true)
 
 What I found
 Filtering by SNI successfully separated the capture into distinct site conversations without needing to decrypt anything. `www.lmu.edu` appeared clearly, alongside expected Google-related domains (`beacons.gcp.gvt2.com`, `content-autofill.googleapis.com`, `www.googletagmanager.com`).
