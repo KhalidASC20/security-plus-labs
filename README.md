@@ -24,7 +24,7 @@ Discovered my home router was still running factory-default admin credentials. D
 **Date:** Aug 2026
 Used Wireshark to directly compare unencrypted HTTP traffic against TLS-encrypted HTTPS traffic on the same type of request, demonstrating why encryption in transit matters using real captured evidence rather than just theory.
 
-### 3. [Identifying Third-Party Tracking Domains via TLS SNI Analysis](local-network-packet-capture-2/packet-capture-notes-2)
+### 3. [Identifying Third-Party Tracking Domains via TLS SNI Analysis](local-network-packet-capture-2/packet-capture-notes-2.md)
 **Date:** Aug 8, 2026
 Used the TLS Client Hello's SNI field to identify distinct encrypted conversations without decryption, uncovering multiple third-party ad-tech/tracking domains silently contacted by a single university webpage load.
 
