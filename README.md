@@ -28,7 +28,7 @@ Used Wireshark to directly compare unencrypted HTTP traffic against TLS-encrypte
 **Date:** Aug 8, 2026
 Used the TLS Client Hello's SNI field to identify distinct encrypted conversations without decryption, uncovering multiple third-party ad-tech/tracking domains silently contacted by a single university webpage load.
 
-### 4. [Decrypting Own TLS Traffic with SSLKEYLOGFILE and HTTP/2 Analysis](local-network-packet-capture-3/decrypting-TLS-traffic-notes)
+### 4. [Decrypting Own TLS Traffic with SSLKEYLOGFILE and HTTP/2 Analysis](local-network-packet-capture-3/decrypting-TLS-traffic-notes.md)
 **Date:** Aug 9, 2026
 Decrypted my own browser's TLS sessions using the SSLKEYLOGFILE technique, then compared raw decrypted TLS stream output against parsed HTTP/2 stream output to demonstrate the difference between decryption and protocol-level readability.
 
