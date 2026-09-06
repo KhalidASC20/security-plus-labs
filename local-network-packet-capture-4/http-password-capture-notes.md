@@ -3,9 +3,11 @@ Date: 08/11/26
 Tools used: Wireshark
 
 Objective
+
 Login to an unprotected website and login using fake credentials to then attempting to capture the traffic revealing unencrytped username and password.
 
 Steps taken
+
 1. Find a HTTP website with a login page
 3. Start a packet capture
 4. Login using fake credentials
@@ -13,6 +15,9 @@ Steps taken
 6. Right-clicked the packet and used Follow → HTTP Stream to reassemble the full plaintext request and response.
 7. The stream revealed the unencrypted credentials i used on the login page. 
 
+To see decrypted http stream containing plaintext credentials:
+
+see under local-network-packet-capture-4/http-site-password-packet-capture-http-stream
 
 Following the HTTP stream on the POST request reassembled the full login submission in plain text. The form data — including the username and password fields I entered — was visible exactly as typed, with no encoding or obfuscation applied. Anyone capturing traffic on the same network path (a shared Wi-Fi network, a compromised router, or any on-path position between my laptop and the server) would have been able to read these credentials in the same way. 
 
@@ -23,9 +28,11 @@ This is a real-world demonstration of the confidentiality risk posed by unencryp
 It also highlights a practical lesson for everyday browsing: users should be mindful to read a websites URL more closely, HTTPS (and the padlock icon) is not a cosmetic detail — it is the actual mechanism standing between a login form and full credential exposure.
 
 What I'd recommend / next steps
+
 Never enter real credentials on any HTTP-only login page; treat the absence of HTTPS as a hard stop, not a minor inconvenience.
 
 Related exam concepts
+
 Domain 1 (Confidentiality — CIA triad), Domain 2 (Threats, Vulnerabilities & Mitigations — insecure/legacy protocols as a vulnerability), Domain 3 (Security Architecture — encryption in transit)
 
 
