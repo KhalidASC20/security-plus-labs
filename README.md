@@ -32,7 +32,7 @@ Used the TLS Client Hello's SNI field to identify distinct encrypted conversatio
 **Date:** Aug 9, 2026
 Decrypted my own browser's TLS sessions using the SSLKEYLOGFILE technique, then compared raw decrypted TLS stream output against parsed HTTP/2 stream output to demonstrate the difference between decryption and protocol-level readability.
 
-### 5. [Capturing Unprotected HTTP Login Credentials](local-network-packet-capture-4/http-password-capture-notes)
+### 5. [Capturing Unprotected HTTP Login Credentials](local-network-packet-capture-4/http-password-capture-notes.md)
 **Date:** Aug 11, 2026
 Located a live, publicly accessible login page still using plain HTTP, and captured the full plaintext credential submission via packet analysis using fake/dummy credentials — a real-world demonstration of credential exposure risk over unencrypted channels.
 
