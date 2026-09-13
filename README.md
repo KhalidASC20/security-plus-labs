@@ -64,7 +64,7 @@ Installed third-party software (7-Zip) on a remote endpoint via AnyDesk, encount
 
 ## Linux Administration
 
-### 1. [Linux Server Setup: VM Provisioning, Remote Access, and Firewall Hardening](linux/admin/VM-provisioning-firewall-hardening/VM-provisioning-firewall-hardening-notes.md)
+### 1. [Linux Server Setup: VM Provisioning, Remote Access, and Firewall Hardening](linux-admin/VM-provisioning-firewall-hardening/VM-provisioning-firewall-hardening-notes.md)
 
 **Date:** Sep 11, 2026
 
