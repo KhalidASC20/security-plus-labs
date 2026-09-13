@@ -25,11 +25,11 @@ More significantly, the UAC prompt ran in Windows' **Secure Desktop** mode — a
 ### Screenshot(s)
 
 AnyDesk session showing "awaiting authentication" message
-![AnyDesk session showing "awaiting authentication" message](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-software-installation/anydesk-authorization-for-remote-access.png?raw=true)
+![AnyDesk session showing "awaiting authentication" message](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-support/remote-software-installation/anydesk-authorization-for-remote-access.png?raw=true)
 UAC consent prompt for the 7-Zip installer
-![UAC consent prompt for the 7-Zip installer](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-software-installation/anydesk-UAC-pompt.jpeg?raw=true)
+![UAC consent prompt for the 7-Zip installer](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-support/remote-software-installation/anydesk-UAC-pompt.jpeg?raw=true)
 7-Zip successfully installed, confirmed post-reconnection
-![7-Zip successfully installed, confirmed post-reconnection](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-software-installation/7-zip-running.png?raw=true) 
+![7-Zip successfully installed, confirmed post-reconnection](https://github.com/KhalidASC20/security-plus-labs/blob/main/remote-support/remote-software-installation/7-zip-running.png?raw=true) 
 
 ### Why it matters
 This is a direct, hands-on demonstration of a real Windows security control working as intended: Secure Desktop mode exists specifically to prevent malware or unauthorized remote software from silently self-elevating privileges by scripting past a UAC prompt. By experiencing this restriction firsthand — being blocked from remotely accepting the prompt through standard AnyDesk functionality — this exercise validated that the isolation boundary functions even against a legitimate, authorized remote-support tool being used for an authorized purpose.
