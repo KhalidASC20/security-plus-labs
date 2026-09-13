@@ -17,7 +17,7 @@ A collection of hands-on network and security exercises completed while studying
 ---
 
 ## Lab Index
-
+## Network Security and Traffic Analysis
 ### 1. [Router Default Credential Discovery and Remediation](network-security/local-network-recon-2/Default-Router-Admin-Notes)
 
 **Date:** Aug 7, 2026
@@ -43,16 +43,29 @@ Decrypted my own browser's TLS sessions using the SSLKEYLOGFILE technique, then 
 **Date:** Aug 11, 2026
 Located a live, publicly accessible login page still using plain HTTP, and captured the full plaintext credential submission via packet analysis using fake/dummy credentials — a real-world demonstration of credential exposure risk over unencrypted channels.
 
-### 6. [Remote Desktop Management](remote-support/remote-desktop-management-1/remote-desktop-management-notes.md)
+## Remote Systems Administration
+
+### 1. [Remote Desktop Management](remote-support/remote-desktop-management-1/remote-desktop-management-notes.md)
 
 **Date:** Aug 29, 2026
 Remotely accessed my desktop via Anydesk from my laptop to simulate an IT ticket. Disabled a printing function remotely to create a fault and then went through trouble shooting steps to restart the printing adapter remotely.
 
-### 7. [Remote Desktop App Installation](remote-support/remote-software-installation/remote-software-installation-notes.md)
+### 2. [Remote Desktop App Installation](remote-support/remote-software-installation/remote-software-installation-notes.md)
 
 **Date:** Aug 29, 2026
 Installed third-party software (7-Zip) on a remote endpoint via AnyDesk, encountering and navigating Windows' Secure Desktop UAC isolation — a security boundary that blocked the remote tool from directly interacting with the elevation prompt, requiring physical confirmation at the endpoint to complete. 
 
+## Linux Administration
+
+### 1. [Linux Server Setup: VM Provisioning, Remote Access, and Firewall Hardening/remote-software-installation/remote-software-installation-notes.md)
+
+**Date:** Sep 11, 2026
+Provisioned an Ubuntu Server VM from scratch, configured remote access via SSH, and applied a default-deny firewall policy using ufw — establishing a secure baseline server configuration and demonstrating correct sequencing to avoid self-lockout during remote firewall setup.
+
+### 2. [Troubleshooting a Broken SSH Key Authentication Setup (Multi-Layered Root Cause)/remote-software-installation/remote-software-installation-notes.md)
+
+**Date:** Sep 11, 2026
+Diagnosed and resolved a chained SSH authentication failure spanning three separate root causes — a key pair generated in the wrong location, a silently overriding configuration file, and a missing Windows utility — recovering access using a preserved out-of-band console session rather than reverting the hardening in progress.
 ---
 
 ## Additional recon (informal findings, write-ups in progress)
