@@ -23,14 +23,14 @@ On the HTTPS capture, the equivalent traffic showed as TLS-encrypted application
 Snapshot(s)
 
 Packet capture of wbsite traffic filtered to specifically HTML traffic
-![packet-html-filter](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/packet-html-filter.png?raw=true)
+![packet-html-filter](https://github.com/KhalidASC20/security-plus-labs/blob/main/network-security/local-network-packet-capture-1/packet-html-filter.png?raw=true)
 Captured the get request package revealing unencrypted data
-![plaintext-GET](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/plaintext-GET.png?raw=true)
+![plaintext-GET](https://github.com/KhalidASC20/security-plus-labs/blob/main/network-security/local-network-packet-capture-1/plaintext-GET.png?raw=true)
 Captured the complete HTML stream showing the unencrypted data: see http-site-packet-capture-html-stream-1
 Packet capture filtered by server name using command: 'tls.handshake.extensions_server_names'.
-![packet-filtered-by-server-name](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/packet-filtered-by-server-name.png?raw=true)
+![packet-filtered-by-server-name](https://github.com/KhalidASC20/security-plus-labs/blob/main/network-security/local-network-packet-capture-1/packet-filtered-by-server-name.png?raw=true)
 Captured traffic from https website and the packet data was encrypted
-![encrypted-packet-HTTPS](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-1/encrypted-packet-HTTPS.png?raw=true)
+![encrypted-packet-HTTPS](https://github.com/KhalidASC20/security-plus-labs/blob/main/network-security/local-network-packet-capture-1/encrypted-packet-HTTPS.png?raw=true)
 
 
 Why it matters 
