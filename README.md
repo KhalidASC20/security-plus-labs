@@ -64,13 +64,13 @@ Installed third-party software (7-Zip) on a remote endpoint via AnyDesk, encount
 
 ## Linux Administration
 
-### 1. [Linux Server Setup: VM Provisioning, Remote Access, and Firewall Hardening/remote-software-installation/remote-software-installation-notes.md)
+### 1. [Linux Server Setup: VM Provisioning, Remote Access, and Firewall Hardening](linux/admin/VM-provisioning-firewall-hardening/VM-provisioning-firewall-hardening-notes.md)
 
 **Date:** Sep 11, 2026
 
 Provisioned an Ubuntu Server VM from scratch, configured remote access via SSH, and applied a default-deny firewall policy using ufw — establishing a secure baseline server configuration and demonstrating correct sequencing to avoid self-lockout during remote firewall setup.
 
-### 2. [Troubleshooting a Broken SSH Key Authentication Setup (Multi-Layered Root Cause)/remote-software-installation/remote-software-installation-notes.md)
+### 2. [Troubleshooting a Broken SSH Key Authentication Setup (Multi-Layered Root Cause)](linux-admin/VM-SSH-troubleshooting/VM-SSH-Troubleshooting-notes.md)
 
 **Date:** Sep 11, 2026
 
