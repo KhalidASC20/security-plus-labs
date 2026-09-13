@@ -21,26 +21,31 @@ A collection of hands-on network and security exercises completed while studying
 ### 1. [Router Default Credential Discovery and Remediation](network-security/local-network-recon-2/Default-Router-Admin-Notes)
 
 **Date:** Aug 7, 2026
+
 Discovered my home router was still running factory-default admin credentials. Documents the specific threat vectors this exposed (router takeover, DNS hijacking, botnet recruitment) and the remediation steps applied.
 
 ### 2. [Observing Plaintext HTTP vs. Encrypted HTTPS Traffic](network-security/local-network-packet-capture-1/packet-capture-notes.md)
 
 **Date:** Aug 2026
+
 Used Wireshark to directly compare unencrypted HTTP traffic against TLS-encrypted HTTPS traffic on the same type of request, demonstrating why encryption in transit matters using real captured evidence rather than just theory.
 
 ### 3. [Identifying Third-Party Tracking Domains via TLS SNI Analysis](network-security/local-network-packet-capture-2/packet-capture-notes-2.md)
 
 **Date:** Aug 8, 2026
+
 Used the TLS Client Hello's SNI field to identify distinct encrypted conversations without decryption, uncovering multiple third-party ad-tech/tracking domains silently contacted by a single university webpage load.
 
 ### 4. [Decrypting Own TLS Traffic with SSLKEYLOGFILE and HTTP/2 Analysis](network-security/local-network-packet-capture-3/decrypting-TLS-traffic-notes.md)
 
 **Date:** Aug 9, 2026
+
 Decrypted my own browser's TLS sessions using the SSLKEYLOGFILE technique, then compared raw decrypted TLS stream output against parsed HTTP/2 stream output to demonstrate the difference between decryption and protocol-level readability.
 
 ### 5. [Capturing Unprotected HTTP Login Credentials](network-security/local-network-packet-capture-4/http-password-capture-notes.md)
 
 **Date:** Aug 11, 2026
+
 Located a live, publicly accessible login page still using plain HTTP, and captured the full plaintext credential submission via packet analysis using fake/dummy credentials — a real-world demonstration of credential exposure risk over unencrypted channels.
 
 ## Remote Systems Administration
@@ -48,11 +53,13 @@ Located a live, publicly accessible login page still using plain HTTP, and captu
 ### 1. [Remote Desktop Management](remote-support/remote-desktop-management-1/remote-desktop-management-notes.md)
 
 **Date:** Aug 29, 2026
+
 Remotely accessed my desktop via Anydesk from my laptop to simulate an IT ticket. Disabled a printing function remotely to create a fault and then went through trouble shooting steps to restart the printing adapter remotely.
 
 ### 2. [Remote Desktop App Installation](remote-support/remote-software-installation/remote-software-installation-notes.md)
 
 **Date:** Aug 29, 2026
+
 Installed third-party software (7-Zip) on a remote endpoint via AnyDesk, encountering and navigating Windows' Secure Desktop UAC isolation — a security boundary that blocked the remote tool from directly interacting with the elevation prompt, requiring physical confirmation at the endpoint to complete. 
 
 ## Linux Administration
@@ -60,12 +67,15 @@ Installed third-party software (7-Zip) on a remote endpoint via AnyDesk, encount
 ### 1. [Linux Server Setup: VM Provisioning, Remote Access, and Firewall Hardening/remote-software-installation/remote-software-installation-notes.md)
 
 **Date:** Sep 11, 2026
+
 Provisioned an Ubuntu Server VM from scratch, configured remote access via SSH, and applied a default-deny firewall policy using ufw — establishing a secure baseline server configuration and demonstrating correct sequencing to avoid self-lockout during remote firewall setup.
 
 ### 2. [Troubleshooting a Broken SSH Key Authentication Setup (Multi-Layered Root Cause)/remote-software-installation/remote-software-installation-notes.md)
 
 **Date:** Sep 11, 2026
+
 Diagnosed and resolved a chained SSH authentication failure spanning three separate root causes — a key pair generated in the wrong location, a silently overriding configuration file, and a missing Windows utility — recovering access using a preserved out-of-band console session rather than reverting the hardening in progress.
+
 ---
 
 ## Additional recon (informal findings, write-ups in progress)
