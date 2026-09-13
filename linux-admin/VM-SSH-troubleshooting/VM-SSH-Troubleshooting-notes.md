@@ -1,6 +1,6 @@
 # Troubleshooting a Broken SSH Key Authentication Setup (Multi-Layered Root Cause)
 
-**Date:** September 2026
+**Date:** September 11, 2026
 
 **Tools used:** VirtualBox, Ubuntu Server, PowerShell, OpenSSH
 
@@ -31,19 +31,21 @@ The root cause was a chain of three separate, compounding issues rather than a s
 Disabling password authentication before verifying key-based access actually worked created a genuine, temporary lockout condition — recoverable here only because a separate, already-authenticated console session to the VM had deliberately been kept open throughout the process.
 
 ### Screenshot(s)
+Changed PasswordAuthentication from yes to no
 
-[sshd_config.d directory listing showing 50-cloud-init.conf]
-[Permission denied (publickey) error message]
-[Successful key-based SSH login with no password prompt]
-[Final ufw/SSH service status confirming hardened configuration]
+![sshd_config.d directory listing showing 50-cloud-init.conf](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/VM-SSH-troubleshooting/VM-50-cloud-init.png?raw=true)
 
-### Why it matters (the security angle)
+Successful connection to VM from laptop on SSH with no password
+
+![Successful key-based SSH login with no password prompt](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/VM-SSH-troubleshooting/Conneting-to-vmbox-nopasscode.png?raw=true)
+
+### Why it matters
 
 This directly demonstrates a core operational risk in access-control hardening: removing a fallback authentication method (password) before confirming its replacement (SSH key) is fully functional can immediately and completely lock out legitimate access. Real-world system administrators guard against exactly this scenario by maintaining an out-of-band access path (in this case, a separate console session) before making authentication changes to a remote-only access method — a practice this exercise validated firsthand rather than just conceptually.
 
 This also demonstrated a genuine, non-obvious Linux configuration-management concept: **include-file precedence**. Modern Linux systems increasingly split configuration across a main file plus a directory of override snippets (sshd_config.d/, and similarly sudoers.d/, systemd drop-in directories, etc.), specifically so automated tools like cloud-init can apply settings without directly modifying hand-maintained config files. Understanding that an override directory can silently take precedence over an edited main file is a genuinely useful, transferable troubleshooting instinct beyond just SSH.
 
-### next steps
+### Next steps
 
 - When hardening remote access controls in the future, always verify the replacement authentication method in a separate, still-open session before disabling any fallback method — never assume success without confirmation in a fresh connection.
 - When a configuration change appears to have no effect, check for override/include directories before assuming the edit itself was wrong.
