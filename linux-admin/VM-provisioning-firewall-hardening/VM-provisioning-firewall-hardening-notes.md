@@ -1,6 +1,6 @@
 # Linux Server Setup: VM Provisioning, Remote Access, and Firewall Hardening
 
-**Date:** September 2026
+**Date:** September 11, 2026
 
 **Tools used:** VirtualBox, Ubuntu Server (LTS), OpenSSH, ufw
 
@@ -28,11 +28,21 @@ The completed setup resulted in a Linux server reachable only via SSH, with all 
 This lab also reinforced the practical difference between local (console) access and remote (SSH) access to the same machine — while both ultimately control the same underlying system, they represent genuinely separate access paths, which became directly relevant later when a preserved console session served as the recovery path during a separate SSH authentication issue (documented in a companion write-up).
 
 ### Screenshot(s)
+VirtualBox settings/configuration
 
-[VirtualBox VM settings showing Bridged Adapter network configuration]
-[Successful `sudo whoami` output confirming admin privileges]
-[Initial successful SSH connection from laptop to VM]
-[`ufw status` output showing OpenSSH allowed, firewall active]
+![VirtualBox VM settings showing Bridged Adapter network configuration](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/VM-provisioning-firewall-hardening/VMbox.png?raw=true)
+
+Proof of admin privileges
+
+![Successful `sudo whoami` output confirming admin privileges](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/VM-provisioning-firewall-hardening/Proof-of-admin.png?raw=true)
+
+Successful SSH connection from laptop to VM
+
+![Initial successful SSH connection from laptop to VM](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/VM-provisioning-firewall-hardening/Connecting-to-vmbox-from-ssh.png?raw=true)
+
+Proof of active firewall
+
+![`ufw status` output showing OpenSSH allowed, firewall active](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/VM-provisioning-firewall-hardening/Active-firewall.png?raw=true)
 
 ### Why it matters
 
