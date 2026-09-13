@@ -21,7 +21,7 @@ Steps taken
 Screenshot(s)
 
 Decrypted TLS packet capture
-![decrypting-TLS-traffic](https://github.com/KhalidASC20/security-plus-labs/blob/main/local-network-packet-capture-3/decrypted-TLS-traffic.png?raw=true)
+![decrypting-TLS-traffic](https://github.com/KhalidASC20/security-plus-labs/blob/main/network-secuirty/local-network-packet-capture-3/decrypted-TLS-traffic.png?raw=true)
 
 Captured the decrypted TLS stream
 
