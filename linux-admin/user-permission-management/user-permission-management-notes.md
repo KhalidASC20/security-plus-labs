@@ -31,11 +31,29 @@ The sudo scoping exercise directly demonstrated the least-privilege principle in
 Restarting the SSH service while connected via SSH also clarified an important operational distinction: the service *listener* was restarted, but my already-established session was unaffected, since existing connections are handled independently of the listener process accepting new ones.
 
 ### Screenshot(s)
+Successfully added two new users (Lisa and Maggie) to a group (team-simpson)
 
-[`groups lisa` and `groups maggie` output confirming group membership]
-[`getfacl /srv/project-files` output showing bart's ACL entry]
-[maggie successfully restarting the SSH service with no password prompt]
-[maggie denied access to /etc/shadow]
+![`groups lisa` and `groups maggie` output confirming group membership](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/user-permission-management/added-users-to-group.png?raw=true)
+
+Created read and write priviliges for users within group team-simpson
+
+![lisa touch file within group](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/user-permission-management/proof-of-group-privelege.png?raw=true)
+
+Created a user outside of the group (bart) who cannot access files controlled by group team-simpson
+
+![bart can't access project-files](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/user-permission-management/bart-edit-denial.png?raw=true)
+
+Created an Access Control List allowing Lisa to restart SSH without needing a password
+
+![`getfacl /srv/project-files` output showing bart's ACL entry](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/user-permission-management/lisa-acl-restart-nopasswrd.png?raw=true)
+
+Using Lisa's account I was able to restart SSH services with no password
+
+![maggie successfully restarting the SSH service with no password prompt](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/user-permission-management/lisa-restarting-ssh.png?raw=true)
+
+Lisa's account rightfully does not have access to any other file or service
+
+![maggie denied access to /etc/shadow](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/user-permission-management/Lisa-shadow-denial.png?raw=true)
 
 ### Why it matters
 
@@ -44,6 +62,7 @@ This lab is a direct, hands-on application of the **least-privilege principle** 
 The use of `visudo` specifically (rather than editing sudoers files directly) also reinforces a real operational safety practice: validating configuration syntax before it takes effect, preventing a typo from locking out administrative access entirely — a direct, lower-risk parallel to the SSH configuration lockout encountered in the previous lab.
 
 ### Next steps
+
 - Apply the same scoped-sudo pattern to any future service accounts on this server, rather than defaulting to full sudo access for convenience.
 - Periodically audit `/etc/sudoers.d/` and group memberships as the number of users grows, to ensure access still matches actual need.
 - Next step: move into service and package management, applying these same access-control principles to services running on the server.
