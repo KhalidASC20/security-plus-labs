@@ -76,6 +76,12 @@ Provisioned an Ubuntu Server VM from scratch, configured remote access via SSH, 
 
 Diagnosed and resolved a chained SSH authentication failure spanning three separate root causes — a key pair generated in the wrong location, a silently overriding configuration file, and a missing Windows utility — recovering access using a preserved out-of-band console session rather than reverting the hardening in progress.
 
+### 3. [Linux User, Group, and Permission Management](linux-admin/user-permission-management/user-permission-management-notes.md)
+
+**Date:** Sep 13, 2026
+
+Implemented multi-user account management, shared directory permissions, and access control lists (ACLs) on a Linux server, then applied the least-privilege principle in practice by granting a user a single, narrowly scoped sudo capability via visudo — verified by confirming the user could perform the one authorized action while being correctly denied access to a sensitive system file.
+
 ---
 
 ## Additional recon (informal findings, write-ups in progress)
