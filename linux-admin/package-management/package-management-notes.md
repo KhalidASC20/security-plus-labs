@@ -47,7 +47,7 @@ Successful nginx default page connection after allowing the http rule
 
 Active custom service that monitors if the Ubuntu server is active
 
-![`systemctl status heartbeat` showing the custom service active]()
+![`systemctl status heartbeat` showing the custom service active](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/package-management/heartbeat-running.png?raw=true)
 
 Heartbeat log entries continuing after a full reboot
 
