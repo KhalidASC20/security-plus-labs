@@ -33,12 +33,25 @@ Writing and deploying the custom systemd service demonstrated that service manag
 
 ### Screenshot(s)
 
-[Browser showing nginx connection timeout before the firewall fix]
-[`ufw status` showing only SSH allowed]
-[Successful nginx default page after allowing the HTTP rule]
-[`timedatectl` output showing synchronized clock]
-[`systemctl status heartbeat` showing the custom service active]
-[Heartbeat log entries continuing after a full reboot]
+Browser showing nginx connection timeout before the firewall fix
+
+![Browser showing nginx connection timeout before the firewall fix](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/package-management/nginx-blocked-by-firewall.png?raw=true)
+
+Firewall showing only ssh allowed and then changing rule to allow nginx http
+
+![`ufw status` showing only SSH allowed](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/package-management/from-no-allow-to-yes-allow-port80.png?raw=true)
+
+Successful nginx default page connection after allowing the http rule
+
+![Successful nginx default page after allowing the HTTP rule](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/package-management/nginx-welcome-screen.png?raw=true)
+
+Active custom service that monitors if the Ubuntu server is active
+
+![`systemctl status heartbeat` showing the custom service active]()
+
+Heartbeat log entries continuing after a full reboot
+
+![Heartbeat log entries continuing after a full reboot](https://github.com/KhalidASC20/security-plus-labs/blob/main/linux-admin/package-management/custom-script-running.png?raw=true)
 
 ### Why it matters 
 
