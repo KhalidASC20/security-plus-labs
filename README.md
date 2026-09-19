@@ -82,6 +82,12 @@ Diagnosed and resolved a chained SSH authentication failure spanning three separ
 
 Implemented multi-user account management, shared directory permissions, and access control lists (ACLs) on a Linux server, then applied the least-privilege principle in practice by granting a user a single, narrowly scoped sudo capability via visudo — verified by confirming the user could perform the one authorized action while being correctly denied access to a sensitive system file.
 
+### 4. [Linux Package Management and Custom systemd Service Deployment](linux-admin/package-management/package-management-notes.md)
+
+**Date:** Sep 19, 2026
+
+Installed and managed services on a Linux server, diagnosing a firewall gap that blocked a newly deployed web server despite it running correctly, and separately resolving a system clock synchronization issue that was silently breaking package repository validation. Authored and deployed a custom systemd service from scratch, verifying it persisted correctly across a full system reboot.
+
 ---
 
 ## Additional recon (informal findings, write-ups in progress)
