@@ -88,6 +88,13 @@ Implemented multi-user account management, shared directory permissions, and acc
 
 Installed and managed services on a Linux server, diagnosing a firewall gap that blocked a newly deployed web server despite it running correctly, and separately resolving a system clock synchronization issue that was silently breaking package repository validation. Authored and deployed a custom systemd service from scratch, verifying it persisted correctly across a full system reboot.
 
+## Windows Administration
+
+### 1. [Active Directory Lab](windows-admin/Active-Directory-Lab/windows-admin-notes.md)
+
+**Date:** Oct 18, 2026
+
+Built a Windows Server Active Directory domain (`lab.local`) in VirtualBox and practiced the account-management tasks of an IT help desk or MSP technician, using a small law-firm scenario.
 ---
 
 ## Additional recon (informal findings, write-ups in progress)
@@ -102,6 +109,7 @@ A few early exploratory scans that i did, but reflect the same skill set:
   OTHERS:
 - Identified an iPhone on the local network via its lockdownd service (port 62078) and researched the associated pairing-record security model.
 - Practiced vendor/device fingerprinting via MAC address OUI lookups on unidentified network devices.
+
 
 ## Tools used across this repo
 
