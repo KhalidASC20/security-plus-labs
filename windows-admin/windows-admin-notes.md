@@ -83,21 +83,33 @@ Get-ADUser maggie | Move-ADObject -TargetPath "OU=Disabled Users,OU=LawFirm,DC=l
 
 
 ### Screenshot(s)
-[1. NAT Network `ADLab` showing 10.0.2.0/24]
-[2. DC01 VM summary: 4 GB RAM, 2 CPUs, 60 GB disk, attached to ADLab]
-[3. Server Manager dashboard after first login]
-[4. `ipconfig /all`: static IP 10.0.2.10, DNS 127.0.0.1, host name DC01]
-[5. `Get-ADDomain` output showing lab.local]
-[6. Active Directory Users and Computers with the LawFirm OU tree expanded]
-[7. Users in the Staff OU and one user's "Member Of" tab]
-[8. Default Domain Policy: account lockout threshold = 5]
-[9. The failed `net use` attempts in PowerShell]
-[10. bart locked out: `LockedOut = True`]
-[11. After `Unlock-ADAccount`: `LockedOut = False`]
-[12. maggie disabled and in the Disabled Users OU, with group membership removed]
-[13. Group Policy Management: "Staff - Screen Lock 10 min" linked to the Staff OU]
-[14. GPO settings (screen saver timeout 600 seconds) and the Modeling report or `gpresult` result]
-[Optional: the troubleshooting screens (red ISO icon, grayed-out roles) with the fix]
+ipconfig /all showing the static IP and DNS
+
+![`ipconfig /all`: static IP 10.0.2.10, DNS 127.0.0.1, host name DC01](https://github.com/KhalidASC20/security-plus-labs/blob/main/windows-admin/ipconfig-all.png?raw=true)
+
+Adding a new user
+
+![adding a new user](https://github.com/KhalidASC20/security-plus-labs/blob/main/windows-admin/adding-new-user.png?raw=true)
+
+Setting account lockout threshold to 5
+
+![Default Domain Policy: account lockout threshold = 5](https://github.com/KhalidASC20/security-plus-labs/blob/main/windows-admin/setting-lockout-threshold.png?raw=true)
+
+Forcing a lockout by exceeding amount of login attempts
+
+![The failed `net use` attempts in PowerShell](https://github.com/KhalidASC20/security-plus-labs/blob/main/windows-admin/locking-out-account.png?raw=true)
+
+Resetting the password of locked out account
+
+![Resetting password](https://github.com/KhalidASC20/security-plus-labs/blob/main/windows-admin/resetting%20a%20password.png?raw=true)
+
+Disabling an account
+
+![maggie disabled and in the Disabled Users OU, with group membership removed](https://github.com/KhalidASC20/security-plus-labs/blob/main/windows-admin/disabling-user-account.png?raw=true)
+
+Setting a GPO (screen lock 10 min)
+
+![Group Policy Management: "Staff - Screen Lock 10 min" linked to the Staff OU](https://github.com/KhalidASC20/security-plus-labs/blob/main/windows-admin/gpo-screen-lock.png?raw=true)
 
 ---
 
