@@ -90,7 +90,7 @@ Installed and managed services on a Linux server, diagnosing a firewall gap that
 
 ## Windows Administration
 
-### 1. [Active Directory Lab](windows-admin/Active-Directory-Lab/windows-admin-notes.md)
+### 1. [Active Directory Lab](windows-admin/active-directory-lab/windows-admin-notes.md)
 
 **Date:** Oct 18, 2026
 
